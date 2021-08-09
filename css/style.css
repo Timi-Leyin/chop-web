@@ -77,7 +77,7 @@ button:hover, button:active {
   -webkit-transition: 0.2ms linear width;
   transition: 0.2ms linear width;
   height: inherit;
-  background-color: rgba(255, 0, 0, 0.886);
+  background-color: #ea1a1a;
 }
 
 #loader .loading-status .loading-bar.loading {
@@ -165,7 +165,7 @@ button:hover, button:active {
 }
 
 #header .nav_link a:hover {
-  color: rgba(255, 0, 0, 0.886);
+  color: #ea1a1a;
 }
 
 #header .coming-soon-btn {
