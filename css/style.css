@@ -181,24 +181,6 @@ button:hover, button:active {
   color: #da1212;
 }
 
-video {
-  position: absolute;
-  opacity: .4;
-  pointer-events: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: none;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100vw;
-  z-index: -1;
-}
-
 .heading {
   text-align: center;
   max-width: 500px;

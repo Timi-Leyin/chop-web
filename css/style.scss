@@ -180,21 +180,6 @@ display: block;
 
 }
 
-video{
-  position: absolute;
-  opacity: .4;
-  pointer-events: none;
-  user-select: none;
-  cursor: none;
-  top: 0;
-  // display: none;
-  left: 0;
-  height:100vh;
-  object-fit: cover;
-  width: 100vw;
-  z-index: -1;
-}
-
 
 .heading{
   text-align: center;
