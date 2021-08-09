@@ -3,6 +3,7 @@
   padding: 0;
   border-sizing: border-box;
   font-family: "Georama", sans-serif;
+  scroll-behavior: smooth;
 }
 $black: rgb(255, 255, 255);
 $white: rgb(0, 0, 0);
@@ -126,8 +127,12 @@ button:hover, button:active{
     padding: 0 18px;
     display: block;
     font-size: 14px;
+    transition: 0.3s color ease;
     color: $black;
     text-decoration: none;
+    &:hover{
+      color: $primary-color;
+    }
   }
 
   .coming-soon-btn {

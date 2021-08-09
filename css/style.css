@@ -3,6 +3,7 @@
   padding: 0;
   border-sizing: border-box;
   font-family: "Georama", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -149,8 +150,14 @@ button:hover, button:active {
   padding: 0 18px;
   display: block;
   font-size: 14px;
+  -webkit-transition: 0.3s color ease;
+  transition: 0.3s color ease;
   color: white;
   text-decoration: none;
+}
+
+#header .nav_link a:hover {
+  color: rgba(255, 0, 0, 0.886);
 }
 
 #header .coming-soon-btn {
