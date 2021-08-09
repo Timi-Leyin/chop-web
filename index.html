@@ -14,15 +14,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
+
+<section id="loader">
+  <div class="">
+    <img src="/img/logo.png" class="logo" alt="Chop.Africa Logo" width="70">
+  <h5>Loading</h5>
+  <div class="loading-status">
+<div class="loading-bar loading"></div>
+  </div>
+
+
+
+  </div>
+
+
+
+
+</section>
+
+
+
+
     <!-- HEADER -->
     <header id="header">
-      <div class="header__logo"> <img src="/img/logo.png" class="logo" alt="Chop.Africa Logo"></div>
+      <div class="header__logo isLoaded"> <img src="/img/logo.png" class="logo" alt="Chop.Africa Logo"></div>
       <ul class="header__nav">
-        <li class="nav_link"><a href="#" class="_link">Home</a></li>
-        <li class="nav_link"><a href="#about" rel="canonical" class="_link">About</a></li>
-        <li class="nav_link"><a href="#features" rel="canonical" class="_link">Features</a></li>
+        <li class="nav_link isLoaded"><a href="#" class="_link">Home</a></li>
+        <li class="nav_link isLoaded"><a href="#about" rel="canonical" class="_link">About</a></li>
+        <li class="nav_link isLoaded"><a href="#features" rel="canonical" class="_link">Features</a></li>
         <!-- Header button  -->
-        <li class="nav_link">
+        <li class="nav_link isLoaded">
           <a href="#" class="_link">
             <button class="btn coming-soon-btn" aria-label="Chop App coming to play store soon" aria-readonly="true" aria-required="true">
               <span class="icon"><img src="/img/playstore.svg" alt="Play Store Logo"></span>
@@ -36,7 +57,7 @@
         <!-- Button end  -->
       </ul>
 
-      <div class="hamburger">
+      <div class="hamburger isLoaded">
         <div class="bar-1"></div>
         <div class="bar-2"></div>
         <div class="bar-3"></div>
@@ -48,14 +69,16 @@
 
 
 
+
+
 <section id="hero">
 <div class="hero__intro">
-  <h1>
+  <h1 class="isLoaded">
     Get Your <span class="color">Delicious</span> Food, Knocking at your Doorstep
   </h1>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, consectetur deleniti. Consequatur consectetur aperiam animi. Modi, laborum. Tempore, dolor eligendi.</p>
+  <p class="isLoaded">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, consectetur deleniti. Consequatur consectetur aperiam animi. Modi, laborum. Tempore, dolor eligendi.</p>
 
-  <div class="">
+  <div class="isLoaded">
   <label for="email">Email Address</label>
   <form action="" class="notify-form">
   <input type="email" name="" id="" placeholder="Enter your Email Address">
@@ -69,7 +92,7 @@
 
 
 
-<div class="hero__intro-image">
+<div class="hero__intro-image isLoaded">
   <img src="/img/hero.png" alt="">
 </div>
 </section>
@@ -78,20 +101,20 @@
 
 <section id="features">
 <div class="heading">
-  <p class="sub">FEATURES</p>
-  <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, qui.</h2>
+  <p class="sub isLoaded">FEATURES</p>
+  <h2 class="isLoaded">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, qui.</h2>
 </div>
 
 <div class="features">
 
-<div class="feature-col feature-phone">
+<div class="feature-col feature-phone ">
   <img src="./img/dashboard.png" alt="Chop Mobile App Interface">
 </div>
 
 
 <div class="feature-col">
 
-  <div class="feature">
+  <div class="feature ">
 
     <div class="feature-icon">
       <img src="./img/icon-speedy.svg" alt="">
@@ -271,6 +294,55 @@
 
 
 
+<script>
 
+
+const loader= document.querySelector('#loader');
+
+window.addEventListener('load',()=>{
+
+const loading_bar=loader.querySelector('.loading-bar')
+loading_bar.classList.remove('loading');
+let loading_bar_width=0;
+
+let loadingIncrease=setInterval(()=>{
+loading_bar_width+=1;
+
+if(loading_bar_width > 100){
+clearInterval(loadingIncrease);
+const loadingContent=loader.querySelectorAll('div >*');
+const loadingContentLength=loadingContent.length;
+let loadingContentCount=0;
+loader.style.opacity=0;
+const isLoadedEl=document.body.querySelectorAll('.isLoaded')
+const isLoadedEl_length=isLoadedEl.length;
+let isLoadedCount=0;
+
+let DocumentLoaded=setInterval(()=>{
+  if(isLoadedCount >= isLoadedEl_length-1){
+    clearInterval(DocumentLoaded);
+    loader.style.visibility='hidden'
+
+  }
+  isLoadedEl[isLoadedCount].style.opacity=1
+  isLoadedCount+=1;
+document.body.style.overflowY='auto'
+
+},isLoadedEl_length*3)
+
+}else{
+  loading_bar.style.width=`${loading_bar_width}%`;
+}
+
+
+
+},10)
+
+
+
+})
+
+
+</script>
   </body>
 </html>

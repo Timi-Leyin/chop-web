@@ -6,12 +6,13 @@
 }
 $black: rgb(255, 255, 255);
 $white: rgb(0, 0, 0);
+$primary-color:rgba(255, 0, 0, 0.886);
 
 body {
   scroll-behavior: smooth;
   // font-feature-settings: "aalt";
   background-color: $white;
-  overflow-x: hidden;
+  overflow: hidden;
   color: invert($color: $white);
 }
 
@@ -32,6 +33,54 @@ button:hover, button:active{
 %around {
   @extend %flex;
   justify-content: space-around;
+}
+
+#loader{
+  position: fixed;
+  top: 0;
+  @extend %around;
+  text-align: center;
+  background-color: $white;
+  left: 0;
+  transition: 0.4s opacity ease-out;
+  height: 100%;
+  z-index: 10;
+  width: 100%;
+
+  .loading-status{
+    width: 200px;
+    position: relative;
+    height: 5px;
+    display: flex;
+    border-radius: 100px;
+    margin:10px auto;
+    overflow: hidden;
+    background-color: $black;
+    .loading-bar{
+      width: 0%;
+      transition: 0.2ms linear width;
+      // border-radius: inherit;
+      height: inherit;
+      background-color:$primary-color;
+
+      &.loading{
+        width: 30%;
+        animation: loading 1s forwards infinite;
+        @keyframes loading {
+          from{
+            transform: translateX(0);
+          }
+          to{
+            transform: translateX(200px);
+          }
+        }
+      }
+    }
+  }
+}
+.isLoaded{
+  opacity:0;
+  transition: opacity 0.5s ease-in;
 }
 .coming-soon-btn {
   padding: 6px;

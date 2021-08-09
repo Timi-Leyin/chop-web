@@ -8,7 +8,7 @@
 body {
   scroll-behavior: smooth;
   background-color: black;
-  overflow-x: hidden;
+  overflow: hidden;
   color: white;
 }
 
@@ -18,7 +18,7 @@ button:hover, button:active {
   cursor: pointer;
 }
 
-#footer .footer-items, .coming-soon-btn, #header, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #features .feature .feature-icon, #about, #cta, #features .feature {
+#footer .footer-items, #loader, .coming-soon-btn, #header, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #features .feature .feature-icon, #about, #cta, #features .feature {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,9 +32,77 @@ button:hover, button:active {
       flex-wrap: wrap;
 }
 
-.coming-soon-btn, #header, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #features .feature .feature-icon, #footer .footer-items, #about, #cta {
+#loader, .coming-soon-btn, #header, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #features .feature .feature-icon, #footer .footer-items, #about, #cta {
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  text-align: center;
+  background-color: black;
+  left: 0;
+  -webkit-transition: 0.4s opacity ease-out;
+  transition: 0.4s opacity ease-out;
+  height: 100%;
+  z-index: 10;
+  width: 100%;
+}
+
+#loader .loading-status {
+  width: 200px;
+  position: relative;
+  height: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 100px;
+  margin: 10px auto;
+  overflow: hidden;
+  background-color: white;
+}
+
+#loader .loading-status .loading-bar {
+  width: 0%;
+  -webkit-transition: 0.2ms linear width;
+  transition: 0.2ms linear width;
+  height: inherit;
+  background-color: rgba(255, 0, 0, 0.886);
+}
+
+#loader .loading-status .loading-bar.loading {
+  width: 30%;
+  -webkit-animation: loading 1s forwards infinite;
+          animation: loading 1s forwards infinite;
+}
+
+@-webkit-keyframes loading {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+  }
+}
+
+@keyframes loading {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+  }
+}
+
+.isLoaded {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 
 .coming-soon-btn {
