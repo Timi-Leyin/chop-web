@@ -118,12 +118,13 @@ button:hover, button:active{
 }
 #hero {
   @extend %around ;
-  // height: 85vh;
+   background:linear-gradient(black , rgba(0, 0, 0, 0.797), black), url('/img/Aare.png') no-repeat center center;
+  min-height: 65vh;
   position: relative;
   .hero__intro {
     max-width: 500px;
     // margin: 20px;
-    padding: 5%;
+    // padding: 5%;
 
     h1{
       font-size: 3rem;

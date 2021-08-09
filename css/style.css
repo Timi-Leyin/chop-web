@@ -125,12 +125,14 @@ button:hover, button:active {
 }
 
 #hero {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(rgba(0, 0, 0, 0.797)), to(black)), url("/img/Aare.png") no-repeat center center;
+  background: linear-gradient(black, rgba(0, 0, 0, 0.797), black), url("/img/Aare.png") no-repeat center center;
+  min-height: 65vh;
   position: relative;
 }
 
 #hero .hero__intro {
   max-width: 500px;
-  padding: 5%;
 }
 
 #hero .hero__intro h1 {
