@@ -283,6 +283,9 @@ max-width: 550px;
   h2{
     font-size: 3rem
   }
+  p{
+    font-size: 14px;
+  }
 }
 .about-text{
   max-width: 500px
@@ -376,6 +379,14 @@ flex-wrap: wrap;
 }
 
 @media  screen and (max-width:500px) {
+  #about >* h2{
+      font-size: 2rem
+    }
+
+
+
+
+
   #hero {
     padding: 10px;
     .hero__intro {

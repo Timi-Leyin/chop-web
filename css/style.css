@@ -305,6 +305,10 @@ button:hover, button:active {
   font-size: 3rem;
 }
 
+#about > * p {
+  font-size: 14px;
+}
+
 #about .about-text {
   max-width: 500px;
 }
@@ -393,6 +397,9 @@ button:hover, button:active {
 }
 
 @media screen and (max-width: 500px) {
+  #about > * h2 {
+    font-size: 2rem;
+  }
   #hero {
     padding: 10px;
   }
