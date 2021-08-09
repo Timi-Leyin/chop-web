@@ -9,6 +9,7 @@
     <title>Chop | Online Delivery | Coming Soon</title>
     <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -107,7 +108,7 @@
 
 <div class="features">
 
-<div class="feature-col feature-phone ">
+<div class="feature-col feature-phone" data-aos="fade-down-right" data-aos-duration="200">
   <img src="./img/dashboard.png" alt="Chop Mobile App Interface">
 </div>
 
@@ -116,13 +117,13 @@
 
   <div class="feature ">
 
-    <div class="feature-icon">
+    <div class="feature-icon " data-aos="fade-down-right">
       <img src="./img/icon-speedy.svg" alt="">
     </div>
   
   <div class="feature-info">
-  <h5>Fast</h5>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum porro labore dolores, ratione error molestiae.</p>
+  <h5 data-aos="fade-down-left">Fast</h5>
+  <p data-aos="fade-down-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum porro labore dolores, ratione error molestiae.</p>
   </div>
   
   
@@ -132,11 +133,11 @@
   
 <div class="feature">
 
-  <div class="feature-icon">
+  <div class="feature-icon" data-aos="fade-down-right">
     <img src="./img/icon-speedy.svg" alt="">
   </div>
 
-<div class="feature-info">
+<div class="feature-info" data-aos="fade-down-left">
 <h5> Take
 </h5>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum porro labore dolores, ratione error molestiae.</p>
@@ -149,11 +150,11 @@
  
 <div class="feature">
 
-  <div class="feature-icon">
+  <div class="feature-icon" data-aos="fade-down-right">
     <img src="./img/icon-speedy.svg" alt="">
   </div>
 
-<div class="feature-info">
+<div class="feature-info" data-aos="fade-down-left">
 <h5>Speedy</h5>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum porro labore dolores, ratione error molestiae.</p>
 </div>
@@ -165,11 +166,11 @@
 
 <div class="feature">
 
-  <div class="feature-icon">
+  <div class="feature-icon" data-aos="fade-down-right">
     <img src="./img/icon-speedy.svg" alt="">
   </div>
 
-<div class="feature-info">
+<div class="feature-info" data-aos="fade-down-left">
 <h5>Speedy</h5>
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum porro labore dolores, ratione error molestiae.</p>
 </div>
@@ -191,7 +192,7 @@
 
 <section id="about">
 
-<div class="about-image">
+<div class="about-image" data-aos="fade-down-right">
 <img src="/img/Group 5.png" alt="Mackbook pro with splash screen with logo">
 </div>
 
@@ -199,14 +200,14 @@
 
 
 <div class="about-text">
-  <h2>About Chop</h2>
-  <h6>- WHO WE ARE -</h6>
+  <h2 data-aos="fade-down-right">About Chop</h2>
+  <h6 data-aos="fade-down-left">- WHO WE ARE -</h6>
   <br>
-  <p>
+  <p data-aos="fade-down">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore rerum et quia officia sit a! Quaerat consectetur similique eos, perspiciatis repudiandae sunt dolor possimus blanditiis adipisci, quo neque iste corrupti nostrum earum porro! Voluptatum beatae libero consequatur ipsa natus veniam tenetur? Debitis quae facilis animi facere mollitia placeat quos itaque?
   </p>
   <br>
-  <p>
+  <p data-aos="fade-up">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore rerum et quia officia sit a! Quaerat consectetur similique eos, perspiciatis repudiandae sunt dolor possimus blanditiis adipisci, quo neque iste corrupti nostrum earum porro! Voluptatum beatae libero consequatur ipsa natus veniam tenetur? Debitis quae facilis animi facere mollitia placeat quos itaque?
   </p>
   <br>
@@ -225,14 +226,14 @@
 
 <section id="cta">
 
-<div class="cta_image"></div>
+<div class="cta_image" data-aos="fade-down-right"></div>
 
 
 <div class="cta_text">
-  <p class="head">
+  <p class="head" data-aos="fade-down-left">
     Take it for a <b>Spin</b>
   </p>
-  <span class="info">
+  <span class="info" data-aos="fade-down-left">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error cum odio enim quas labore cumque id hic ut.
   </span>
 
@@ -293,7 +294,7 @@
 
 
 
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 
 
@@ -314,6 +315,9 @@ const loadingContent=loader.querySelectorAll('div >*');
 const loadingContentLength=loadingContent.length;
 let loadingContentCount=0;
 loader.style.opacity=0;
+
+  AOS.init();
+
 const isLoadedEl=document.body.querySelectorAll('.isLoaded')
 const isLoadedEl_length=isLoadedEl.length;
 let isLoadedCount=0;
