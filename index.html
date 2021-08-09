@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chop | Online Delivery | Coming Soon</title>
+    <title>Chop - Online Delivery | Coming Soon</title>
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="icon" sizes="192x192" href="/favicon.png">
     <link rel="stylesheet" href="./css/style.css" />
@@ -324,7 +324,11 @@ const loadingContentLength=loadingContent.length;
 let loadingContentCount=0;
 loader.style.opacity=0;
 
+ try {
   AOS.init();
+ } catch (error) {
+   console.warn(error)
+ }
 
 const isLoadedEl=document.body.querySelectorAll('.isLoaded')
 const isLoadedEl_length=isLoadedEl.length;
