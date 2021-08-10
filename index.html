@@ -10,7 +10,6 @@
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <link rel="icon" sizes="192x192" href="/favicon.png">
     <link rel="stylesheet" href="./css/style.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!-- Chrome, Firefox OS and Opera -->
@@ -48,19 +47,7 @@
     <header id="header">
       <div class="header__logo isLoaded"> <img src="/img/logo.png" class="logo" alt="Chop.Africa Logo"></div>
       <ul class="header__nav">
-        <!-- Header button  -->
-        <li class="nav_link isLoaded">
-          <a href="#" class="_link">
-            <button class="btn coming-soon-btn" aria-label="Chop App coming to play store soon" aria-readonly="true" aria-required="true">
-              <span class="icon"><img src="/img/playstore.svg" alt="Play Store Logo"></span>
-              <div class="text">
-                <span>Coming Soon on</span>
-                <h4>Play Store</h4>
-              </div>
-            </button>
-          </a>
-        </li>
-        <!-- Button end  -->
+     
       </ul>
 
     </header>
@@ -81,12 +68,12 @@
 
   <div class="isLoaded parallax-layer">
   <label for="email">Email Address</label>
-  <p class="error color">
+  <p class="notify-error error color">
     <!-- please incluse '@', the form is incomplete -->
   </p>
-  <form action="" class="notify-form">
+  <form method="POST" name="notify" class="notify-form">
     <img class="icon" src="/img/envelope-open.svg" alt="Email- Envelope" width="25px">
-  <input type="email" name="" id="" placeholder="Enter your Email Address">
+  <input type="email" name="email" id="email" placeholder="Enter your Email Address">
   <button class="btn">Notify Me</button>
   </form>
   <p style="display:flex; align-items:center"> <span role="img" style="margin: 0 6px;"> <img src="/img/info-circled.svg" width="20px" alt="Info"> </span> Notify Me When App Launch</p>
@@ -138,6 +125,30 @@
 
 
 <script>
+
+const notifyForm=document.forms['notify'];
+const notifyError=document.querySelector('.notify-error')
+const notifyForm_email=notifyForm['email'];
+
+function checkValue(e){
+  if(!notifyForm_email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+
+    notifyError.innerText='Invalid Email Address';
+    notifyError.style.opacity=1
+    e.preventDefault()
+  }
+if(!notifyForm_email.checkValidity()){
+  notifyError.innerText=notifyForm_email.validationMessage
+  notifyError.style.opacity=1
+  e.preventDefault()
+}else{
+  //here
+}
+}
+
+notifyForm_email.addEventListener('input',checkValue)
+notifyForm.addEventListener('submit',checkValue)
+
 
 
 const loader= document.querySelector('#loader');

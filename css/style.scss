@@ -119,9 +119,13 @@ a{
 
 //
 #header {
-  @extend %around;
+  @extend %flex;
+  justify-content: space-between;
   height: 100px;
 
+  .header__logo {
+    margin: 40px 10%
+  }
   .header__logo img {
     width: 50px;
   }
@@ -203,10 +207,12 @@ a{
     background-color: transparent !important;
   }
   button{
-    padding: 10px 20px;
+    padding: 8px 20px;
     background-color: $black;
     border:none;
     font-weight: bold;
+    width: 40%;
+    font-size: 12px;
     border-radius: 15px;
     color: rgb(0, 0, 0);
     margin: 0 15px;

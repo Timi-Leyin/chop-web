@@ -34,7 +34,7 @@ a {
   text-decoration: none;
 }
 
-#loader, .coming-soon-btn, #header, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #footer .footer-items {
+#loader, .coming-soon-btn, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #footer .footer-items, #header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,7 +43,7 @@ a {
           align-items: center;
 }
 
-#loader, .coming-soon-btn, #header, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #footer .footer-items {
+#loader, .coming-soon-btn, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #footer .footer-items {
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -145,7 +145,14 @@ a {
 }
 
 #header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 100px;
+}
+
+#header .header__logo {
+  margin: 40px 10%;
 }
 
 #header .header__logo img {
@@ -230,10 +237,12 @@ a {
 }
 
 #hero .notify-form button {
-  padding: 10px 20px;
+  padding: 8px 20px;
   background-color: white;
   border: none;
   font-weight: bold;
+  width: 40%;
+  font-size: 12px;
   border-radius: 15px;
   color: black;
   margin: 0 15px;
