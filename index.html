@@ -63,11 +63,6 @@
         <!-- Button end  -->
       </ul>
 
-      <div class="hamburger isLoaded">
-        <div class="bar-1"></div>
-        <div class="bar-2"></div>
-        <div class="bar-3"></div>
-      </div>
     </header>
     
     <!-- HEADER END -->
@@ -79,18 +74,22 @@
 
 <section id="hero">
 <div class="hero__intro">
-  <h1 class="isLoaded">
-    Get Your <span class="color">Delicious</span> Food, Knocking at your Doorstep
+  <h1 class="isLoaded parallax-layer">
+    Get Your <span class="color">Delicious Food</span> , Knocking at your Doorstep
   </h1>
-  <p class="isLoaded">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, consectetur deleniti. Consequatur consectetur aperiam animi. Modi, laborum. Tempore, dolor eligendi.</p>
+  <p class="isLoaded parallax-layer">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, consectetur deleniti. Consequatur consectetur aperiam animi. Modi, laborum. Tempore, dolor eligendi.</p>
 
-  <div class="isLoaded">
+  <div class="isLoaded parallax-layer">
   <label for="email">Email Address</label>
+  <p class="error color">
+    <!-- please incluse '@', the form is incomplete -->
+  </p>
   <form action="" class="notify-form">
+    <img class="icon" src="/img/envelope-open.svg" alt="Email- Envelope" width="25px">
   <input type="email" name="" id="" placeholder="Enter your Email Address">
   <button class="btn"> <img src="/img/plane.svg" alt="Paper Plane" width="20px"> </button>
   </form>
-  <p>Notify Me When App Lanuch</p>
+  <p style="display:flex; align-items:center"> <span role="img" style="margin: 0 6px;"> <img src="/img/info-circled.svg" width="20px" alt="Info"> </span> Notify Me When App Launch</p>
 </div>
 
 
@@ -98,8 +97,8 @@
 
 
 
-<div class="hero__intro-image isLoaded">
-  <img src="/img/hero.png" alt="">
+<div class="hero__intro-image isLoaded parallax-layer">
+  <img src="/img/hero-image.png" alt="Macbook pro with chop dashboard on-screen">
 </div>
 </section>
 
@@ -111,7 +110,7 @@
 
 <ul class="footer-items">
 
-  <li class="f_item">
+  <li class="f_item parallax-layer">
 <img src="/img/logo.png" alt="Chop.Africa Logo" width="70px">
 <div class="terms">
   <h5><span role="img">&copy;</span><span class="year">2021</span> Chop Africa  </h5>
@@ -119,19 +118,12 @@
 </div>
   </li>
 
-  <li class="f_item">
-    <h4 class="head">Company</h4>
 
-    <a href="/">About Us</a>
-    <a href="/">FAQs</a>
-    <a href="/">Contact Us</a>
-  </li>
-
-  <li class="f_item">
+  <li class="f_item parallax-layer" >
     <h4 class="head">Get in Touch</h4>
 
     <span class="head">Partnerships & general enquires</span>
-    <a href="/" class="opaque">hello@chop.africa</a>
+    <a href="mailto:hello@chop.africa" class="opaque">hello@chop.africa</a>
     <div class="socials"></div>
   </li>
 
@@ -145,7 +137,6 @@
 
 
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 
 
@@ -166,12 +157,6 @@ const loadingContent=loader.querySelectorAll('div >*');
 const loadingContentLength=loadingContent.length;
 let loadingContentCount=0;
 loader.style.opacity=0;
-
- try {
-  AOS.init();
- } catch (error) {
-   console.warn(error)
- }
 
 const isLoadedEl=document.body.querySelectorAll('.isLoaded')
 const isLoadedEl_length=isLoadedEl.length;
@@ -200,6 +185,26 @@ document.body.style.overflowY='auto'
 
 
 })
+
+// PARALAX
+function parallax(parent) {
+  let element;
+  return function({speed,elem, offset}) {
+    speed=2
+    offset=3
+  document.querySelector(parent).addEventListener('mousemove',(event=>{
+
+    element=document.querySelectorAll(elem);
+    element.forEach((el,i)=>{
+    const _y= (window.innerHeight - event.pageY*(speed+i)-offset) /100
+    const _x=(window.innerWidth - event.pageX*(speed+i)-offset) /100
+    el.style.transform=`translateX(${_x}px) translateY(${_y}px)`
+   })
+  }))
+  }
+  
+}
+parallax('#hero')({elem:'#hero .parallax-layer'});
 
 
 </script>

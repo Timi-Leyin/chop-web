@@ -12,9 +12,10 @@ $primary-color:#ea1a1a;
 body {
   scroll-behavior: smooth;
   // font-feature-settings: "aalt";
-  background-color: $white;
   overflow: hidden;
   color: invert($color: $white);
+  background:linear-gradient(black , rgba(0, 0, 0, 0.797), black), url('/img/Aare.png') no-repeat center center;
+  background-color: $white;
 }
 img{
   pointer-events: none;
@@ -24,6 +25,7 @@ button:hover, button:active{
   box-shadow: inset 0 0 99px rgba(0, 0, 0, 0.194);
   cursor: pointer;
 }
+
 //
 
 %flex {
@@ -108,7 +110,7 @@ button:hover, button:active{
   }
   .icon img {
     display: block;
-    width: 30px;
+    width: 20px;
   }
 }
 
@@ -124,18 +126,6 @@ button:hover, button:active{
   .header__nav {
     @extend %around;
     list-style: none;
-  }
-
-  .nav_link a {
-    padding: 0 18px;
-    display: block;
-    font-size: 14px;
-    transition: 0.3s color ease;
-    color: $black;
-    text-decoration: none;
-    &:hover{
-      color: $primary-color;
-    }
   }
 
   .coming-soon-btn {
@@ -163,24 +153,16 @@ button:hover, button:active{
     }
   }
 }
-.hamburger{
-  display: none;
-  >*{
-    margin: 4px;
-    height: 3px;
-    border-radius: 20px;
-    width: 25px;
-    background-color: $black
-  }
-}
+
 #hero {
   @extend %around ;
-   background:linear-gradient(black , rgba(0, 0, 0, 0.797), black), url('/img/Aare.png') no-repeat center center;
-  min-height: 65vh;
+  //  background:linear-gradient(black , rgba(0, 0, 0, 0.797), black), url('/img/Aare.png') no-repeat center center;
+  // min-height: 55vh;
+  padding: 20px;
   position: relative;
   .hero__intro {
     max-width: 500px;
-    // margin: 20px;
+    margin: 20px;
     // padding: 5%;
 
     h1{
@@ -195,7 +177,7 @@ button:hover, button:active{
 
 
 .hero__intro-image img{
-  // width: 500px;
+  width: 500px;
 }
 
 .notify-form{
@@ -203,30 +185,31 @@ button:hover, button:active{
   height: 50px;
   max-width: 400px;
   @extend %around;
-  
+  .icon{
+    margin: 0 20px;
+  }
   input{
     width: 100%;
     color: $black;
     font-family: inherit;
     height: inherit;
-    padding: 0 14px;
+    padding: 0px;
     outline: none;
     border: none;
-    background-color: transparent;
+    background-color: transparent !important;
   }
   button{
-width: 50%;
     padding: 10px 20px;
     background-color: $black;
     border:none;
     font-weight: bold;
-    color: rgb(218, 18, 18);
+    color: rgb(90, 79, 79);
     margin: 0 15px;
   }
 }
 
 label[for='email']{
-margin: 10px 0;
+margin: 0px 0;
 color: rgb(218, 18, 18);
 font-weight: bolder;
 display: block;
@@ -234,7 +217,10 @@ display: block;
 .color{
   color: rgb(218, 18, 18);
 }
-
+.error{
+  opacity: 0;
+  transition: 0.4s ease-in;
+}
 
 }
 
@@ -245,53 +231,11 @@ display: block;
   margin: 20px auto;
 }
 
-#features{
-  margin:6rem 0;
-
-  .features{
-    margin: 3rem 20px;
-    display: grid;
-    grid-template-columns: auto  auto;
-    justify-content: center;
-  }
-  .features .feature-phone img{
-    max-width:300px;
-  }
-
-
-  .feature{
-    @extend %flex;
-    margin:35px 0;
-    .feature-icon{
-      margin:15px;
-      flex-shrink: 0;
-      @extend %around;
-      border-radius: 100%;
-    width:50px;
-    height: 50px;
-    background: #fff;
-    img{
-      width:25px
-    }
-  }
-.feature-info{
-  max-width: 300px;
-  h5{
-    font-size: 1.4rem;
-  }
-  p{
-    font-size: 0.8rem;
-  }
-}
-  }
-}
-
 #footer .footer-items{
   @extend %around;
   list-style: none;
-  background:linear-gradient(black , rgba(0, 0, 0, 0.797)), url('/img/Aare.png') no-repeat center center;
   padding: 60px 0;
-  @extend %wrap;
+  // @extend %wrap;
   align-items: flex-start;
 
   .f_item{
@@ -326,129 +270,29 @@ display: block;
   }
 }
 
-#about {
-  margin: 30vh 0;
-@extend %around;
-flex-direction: row-reverse;
-align-items: flex-start;
-
-.about-image img{
-max-width: 550px;
-}
->*{
-  margin:0 20px;
-  h2{
-    font-size: 3rem
-  }
-  p{
-    font-size: 14px;
-  }
-}
-.about-text{
-  max-width: 500px
-}
-}
-
-#cta{
-  @extend %around;
-  margin: 50px 0;
-  flex-wrap: wrap;
-
-  .cta_image{
-    max-width: 600px;
-    width: 100%;
-    height: 500px;
-    border-radius: 20px;
-    background: rgba(255, 192, 203, 0.829);
-  }
-
-
-  .cta_text{
-    max-width: 300px;
-    margin: 30px 0;
-    .head{
-      font-size: 4rem;
-    }
-    .info{
-    // max-width: 400px;
-      margin: 20px 0;
-      display: block;
-      font-size: 14px;
-    }
-  }
-
-}
-
 // RESPONSIVE
 @media screen and (max-width:1146px) {
   #hero .hero__intro-image img{
     display: none;
     }
     
-#about {
-flex-wrap: wrap;
-
-.about-image img{
- width: 100%;
-  }
 }
-}
-@media screen and (max-width:642px) {
-  #footer .footer-items{
- justify-content: center;
- align-items: center;
-  }
-}
-
-@media screen and (max-width:379px) {
-  #footer .footer-items{
- justify-content: left;
- align-items: flex-start;
-  }
-}
-
 
 
 @media  screen and (max-width:700px) {
-  #header .header__nav{
-    display: none;
-  }
-  .hamburger{
-    display: block;
-  }
   #header .header__logo img {
       width: 40px;
     
   }
 
-  #features{
-
-    .features{
-      grid-template-columns: auto ;
-    }
-  }
-
-
-  #cta  .cta_text .head{
-        font-size: 3rem;
-      
-    }
 }
 
 @media  screen and (max-width:500px) {
-  #about >* h2{
-      font-size: 2rem
-    }
-
-
-
-
-
   #hero {
     padding: 10px;
     .hero__intro {
       h1{
-        font-size: 2rem;
+        font-size: 2.2rem;
         max-width: 400px;
       }
       p{
