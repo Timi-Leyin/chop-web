@@ -29,6 +29,11 @@ button:hover, button:active {
   cursor: pointer;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 #loader, .coming-soon-btn, #header, #header .header__nav, #header .coming-soon-btn, #hero, #hero .notify-form, #footer .footer-items {
   display: -webkit-box;
   display: -ms-flexbox;
