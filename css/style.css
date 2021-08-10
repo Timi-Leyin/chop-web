@@ -210,6 +210,7 @@ a {
 #hero .notify-form {
   background-color: #242424;
   height: 50px;
+  border-radius: 15px;
   max-width: 400px;
 }
 
@@ -233,7 +234,8 @@ a {
   background-color: white;
   border: none;
   font-weight: bold;
-  color: #5a4f4f;
+  border-radius: 15px;
+  color: black;
   margin: 0 15px;
 }
 
