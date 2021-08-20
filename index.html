@@ -76,7 +76,7 @@
   <input type="email" name="email" id="email" placeholder="Enter your Email Address">
   <button class="btn">Notify Me</button>
   </form>
-  <p style="display:flex; align-items:center"> <span role="img" style="margin: 0 6px;"> <img src="/img/info-circled.svg" width="20px" alt="Info"> </span> Notify Me When App Launch</p>
+  <p style="display:flex; align-items:center"> <span role="img" style="margin: 0 6px;"> <img src="/img/info-circled.svg" width="20px" alt="Info"> </span> Notify Me When App is Launched</p>
 </div>
 
 
@@ -155,8 +155,8 @@ var requestOptions = {
 
 fetch("https://chop1.herokuapp.com/add/waitlist", requestOptions)
   .then(response => response.text())
-  .then(result => notifyError.innerText=result)
-  .catch(error => notifyError.innerText="Error: "+error);
+  .then(result => notifyError.innerText="Your Email has been added to our wait-list")
+  .catch(error => console.log(error);
 
 }
 }
