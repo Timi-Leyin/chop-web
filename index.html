@@ -144,19 +144,6 @@ if(!notifyForm_email.checkValidity()){
 }else{
   //Add to wait list
 e.preventDefault();
-var urlencoded = new URLSearchParams();
-urlencoded.append("email", notifyForm_email.value);
-
-var requestOptions = {
-  method: 'POST',
-  body: urlencoded,
-  redirect: 'follow'
-};
-
-fetch("https://chop1.herokuapp.com/add/waitlist", requestOptions)
-  .then(response => response.text())
-  .then(result => notifyError.innerText="Your Email has been added to our wait-list")
-  .catch(error => console.log(error);
 
 }
 }
