@@ -131,12 +131,7 @@ const notifyError=document.querySelector('.notify-error')
 const notifyForm_email=notifyForm['email'];
 
 function checkValue(e){
-  if(notifyForm_email.value=""){
-
-    notifyError.innerText='Invalid Email Address';
-    notifyError.style.opacity=1
-    e.preventDefault()
-  }
+  
 if(!notifyForm_email.checkValidity()){
   notifyError.innerText=notifyForm_email.validationMessage
   notifyError.style.opacity=1
@@ -144,7 +139,7 @@ if(!notifyForm_email.checkValidity()){
 }else{
   //Add to wait list
 e.preventDefault();
-
+alert("Error")
 }
 }
 
