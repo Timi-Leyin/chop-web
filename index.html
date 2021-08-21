@@ -133,19 +133,21 @@ const notifyForm_email=notifyForm['email'];
 
 function checkValue(e){
 e.preventDefault();
-if(!notifyForm_email.checkValidity() && notifyForm_email.value != "" && notifyForm_email.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/) ){
+if(!notifyForm_email.checkValidity() || notifyForm_email.value != || && notifyForm_email.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/) ){
   notifyError.innerText=notifyForm_email.validationMessage
   notifyError.style.opacity=1
 
 }else{
   //Add to wait list
-
+notifyForm.addEventListener('submit',()=>{
 alert("success")
+})
+
 }
 }
 
 notifyForm_email.addEventListener('input',checkValue)
-notifyForm.addEventListener('submit',checkValue)
+
 
 
 
