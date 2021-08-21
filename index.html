@@ -131,7 +131,7 @@ const notifyError=document.querySelector('.notify-error')
 const notifyForm_email=notifyForm['email'];
 
 function checkValue(e){
-  if(!notifyForm_email.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+  if(notifyForm_email.value=""){
 
     notifyError.innerText='Invalid Email Address';
     notifyError.style.opacity=1
@@ -143,7 +143,7 @@ if(!notifyForm_email.checkValidity()){
   e.preventDefault()
 }else{
   //Add to wait list
-
+e.preventDefault();
 var urlencoded = new URLSearchParams();
 urlencoded.append("email", notifyForm_email.value);
 
