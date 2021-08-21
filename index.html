@@ -131,15 +131,15 @@ const notifyError=document.querySelector('.notify-error')
 const notifyForm_email=notifyForm['email'];
 
 function checkValue(e){
-  
+e.preventDefault();
 if(!notifyForm_email.checkValidity()){
   notifyError.innerText=notifyForm_email.validationMessage
   notifyError.style.opacity=1
-  e.preventDefault()
+ alert("Error")
 }else{
   //Add to wait list
-e.preventDefault();
-alert("Error")
+
+
 }
 }
 
