@@ -133,7 +133,7 @@ const notifyForm_email=notifyForm['email'];
 
 function checkValue(e){
 e.preventDefault();
-if(!notifyForm_email.checkValidity() || notifyForm_email.value !="" ){
+if(!notifyForm_email.checkValidity() || notifyForm_email.value =="" ){
   notifyError.innerText=notifyForm_email.validationMessage
   notifyError.style.opacity=1
 
@@ -143,7 +143,7 @@ alert("success")
 }
 }
 
-notifyForm_email.addEventListener('input',checkValue)
+notifyForm_email.addEventListener('submit',checkValue)
 
 
 
