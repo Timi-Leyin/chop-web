@@ -21,6 +21,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   </head>
+  <style type="text/css" media="all">
+    button{
+      outline: none
+    }
+  </style>
   <body>
 
 <section id="loader">
@@ -133,17 +138,34 @@ const notifyForm_email=notifyForm['email'];
 
 function checkValue(e){
 e.preventDefault();
-if(!notifyForm_email.checkValidity() || notifyForm_email.value =="" ){
-  notifyError.innerText=notifyForm_email.validationMessage
+if(!notifyForm_email.checkValidity() ||  notifyForm_email.value =="" ){
+  notifyError.innerText= 'invalid Email Address'
   notifyError.style.opacity=1
 
 }else{
   //Add to wait list
-alert("success")
+console.log("success")
+//POST REQ
+
+var urlencoded = new URLSearchParams();
+urlencoded.append("email", notifyForm_email.value);
+
+var requestOptions = {
+  method: 'POST',
+  body: urlencoded,
+  redirect: 'follow'
+};
+
+fetch("https://chop1.herokuapp.com/add/waitlist", requestOptions)
+  .then(response => response.text())
+  .then(result => notifyError.innerText="Email has been Added to our wait-list successfully ☺️") 
+  .catch(error => console.log('error', error));
+
+
 }
 }
 
-notifyForm_email.addEventListener('submit',checkValue)
+notifyForm.addEventListener('submit',checkValue)
 
 
 
