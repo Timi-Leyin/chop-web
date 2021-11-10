@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6e22f2cf.chunk.css",
+    "main.js": "/static/js/main.1f432602.chunk.js",
+    "main.js.map": "/static/js/main.1f432602.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.a4521d5f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.a4521d5f.js.map",
+    "static/js/2.4411493b.chunk.js": "/static/js/2.4411493b.chunk.js",
+    "static/js/2.4411493b.chunk.js.map": "/static/js/2.4411493b.chunk.js.map",
+    "static/js/3.bfcd5436.chunk.js": "/static/js/3.bfcd5436.chunk.js",
+    "static/js/3.bfcd5436.chunk.js.map": "/static/js/3.bfcd5436.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6e22f2cf.chunk.css.map": "/static/css/main.6e22f2cf.chunk.css.map",
+    "static/js/2.4411493b.chunk.js.LICENSE.txt": "/static/js/2.4411493b.chunk.js.LICENSE.txt",
+    "static/media/style.scss": "/static/media/Aare.a29307f2.png",
+    "static/media/FAQ_s.7cbb798c.png": "/static/media/FAQ_s.7cbb798c.png",
+    "static/media/desktop.89b8950a.png": "/static/media/desktop.89b8950a.png",
+    "static/media/envelope-open.be178122.svg": "/static/media/envelope-open.be178122.svg",
+    "static/media/font-awesome.css": "/static/media/fa-solid-900.eb1e9adc.woff2",
+    "static/media/faq_more.e7cf4f03.svg": "/static/media/faq_more.e7cf4f03.svg",
+    "static/media/logo.8b36fede.png": "/static/media/logo.8b36fede.png",
+    "static/media/phone.d7acea21.png": "/static/media/phone.d7acea21.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a4521d5f.js",
+    "static/js/2.4411493b.chunk.js",
+    "static/css/main.6e22f2cf.chunk.css",
+    "static/js/main.1f432602.chunk.js"
+  ]
+}
